@@ -1,0 +1,17 @@
+[package]
+name = "notes-core"
+version = "1.0.0"
+edition = "2024"
+publish = false
+description = "Core of the sample LynaX Studio 'Ghi chú': speaks MCP over stdio."
+
+# Built on its own; not part of the Desktop runtime.
+[workspace]
+
+[dependencies]
+serde_json = "1"
+# The store Desktop prepares is a plain SQLite file.
+rusqlite = { version = "0.37", features = ["bundled"] }
+
+[profile.release]
+strip = true

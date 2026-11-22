@@ -1,0 +1,97 @@
+{
+  "contract": 1,
+  "id": "ai.lynax.examples.notes",
+  "name": {
+    "vi": "Ghi chú",
+    "en": "Notes"
+  },
+  "description": {
+    "vi": "Studio mẫu có lõi: ghi chú, hoàn tác, và đề xuất của agent chỉ áp dụng khi bạn chấp nhận.",
+    "en": "Sample Studio with a core: notes, undo, and agent proposals applied only when you accept them."
+  },
+  "version": "1.0.0",
+  "icon": "icon.svg",
+  "surfaces": {
+    "main": {
+      "entry": "ui/index.html",
+      "modes": [
+        "panel",
+        "window",
+        "detached"
+      ],
+      "default": "panel"
+    }
+  },
+  "core": {
+    "kind": "native",
+    "entry": "core/{os}-{arch}/notes-core",
+    "protocol": "mcp-stdio"
+  },
+  "actions": "core",
+  "stores": [
+    {
+      "key": "main",
+      "kind": "sqlite",
+      "migrations": "migrations"
+    }
+  ],
+  "skills": [
+    "skills/ghi-chu"
+  ],
+  "locales": [
+    "vi",
+    "en"
+  ],
+  "settings": [
+    {
+      "key": "sort",
+      "type": "choice",
+      "title": {
+        "vi": "Sắp xếp ghi chú",
+        "en": "Sort notes"
+      },
+      "description": {
+        "vi": "Lõi của Studio trả ghi chú theo thứ tự này, cho cả trang và LynaX.",
+        "en": "The core lists notes in this order, for the page and for LynaX."
+      },
+      "default": "position",
+      "options": [
+        {
+          "value": "position",
+          "title": {
+            "vi": "Theo thứ tự thêm",
+            "en": "In the order added"
+          }
+        },
+        {
+          "value": "title",
+          "title": {
+            "vi": "Theo tên",
+            "en": "By title"
+          }
+        }
+      ]
+    },
+    {
+      "key": "show_revision",
+      "type": "boolean",
+      "title": {
+        "vi": "Hiện số phiên bản",
+        "en": "Show the revision"
+      },
+      "default": true
+    }
+  ],
+  "permissions": {
+    "folders": [
+      {
+        "key": "exports",
+        "purpose": {
+          "vi": "Ghi file ghi-chu.md khi bạn bấm Xuất ra thư mục",
+          "en": "Writes ghi-chu.md when you choose Export to folder"
+        },
+        "access": "read_write"
+      }
+    ]
+  }
+}
