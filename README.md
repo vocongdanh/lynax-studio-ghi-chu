@@ -13,3 +13,5 @@ Lõi native chỉ cài được từ **bản phát hành** (tệp `.lxstudio` đ
 - `studio.json`: manifest của Studio.
 - `ui/`: giao diện; `migrations/`: lược đồ dữ liệu; `skills/`: hướng dẫn cho agent.
 - `core-src/`: mã nguồn lõi (`cargo build --release`), đóng gói thành `core/<hệ điều hành>-<kiến trúc>/notes-core` trong bản phát hành.
+
+Bản phát hành có lõi dựng sẵn cho Linux x86_64 và macOS Apple Silicon (`linux-x86_64`, `macos-aarch64`).

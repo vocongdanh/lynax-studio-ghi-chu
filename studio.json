@@ -9,7 +9,7 @@
     "vi": "Studio mẫu có lõi: ghi chú, hoàn tác, và đề xuất của agent chỉ áp dụng khi bạn chấp nhận.",
     "en": "Sample Studio with a core: notes, undo, and agent proposals applied only when you accept them."
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "icon.svg",
   "surfaces": {
     "main": {
